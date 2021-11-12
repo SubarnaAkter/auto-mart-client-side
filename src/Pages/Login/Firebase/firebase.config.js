@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDjA3wDZPjWd94OLUn3xqxlvp7lloPq0oA",
-    authDomain: "auto-mart-d4a30.firebaseapp.com",
-    projectId: "auto-mart-d4a30",
-    storageBucket: "auto-mart-d4a30.appspot.com",
-    messagingSenderId: "483957609302",
-    appId: "1:483957609302:web:984c2a62e60a5e826f7cf7"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
   };
 export default  firebaseConfig; 

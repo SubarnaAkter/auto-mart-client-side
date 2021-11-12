@@ -1,9 +1,13 @@
 import React from 'react';
 import { Card, Col,Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const AllProduct = ({ product }) => {
-    const {_id, name, speed, details, price, img } = product;
+
+const ManageProduct = ({product,handleDeleteProduct}) => {
+
+    const {_id, name, speed, details, price, img } =product;
+  
     return (
         <Col>
             <Card>
@@ -25,10 +29,14 @@ const AllProduct = ({ product }) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer className="m-0 p-0">
-                  <Link to={`/booking/${_id}`}  ><Button className="w-100 ">Buy Now</Button></Link>
+                <Button onClick={()=>{
+                      handleDeleteProduct(_id)
+                  }} variant="danger" className="mx-1">Delete Product</Button>
                 </Card.Footer>
             </Card>
             </Col>
             );
 };
- export default AllProduct;
+
+
+export default ManageProduct;

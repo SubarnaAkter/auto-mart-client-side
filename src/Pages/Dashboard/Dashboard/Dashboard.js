@@ -29,6 +29,11 @@ import MyOrders from '../MyOrders/MyOrders';
 import useAuth from '../../../Hooks/useAuth';
 import PayNow from '../PayNow/PayNow';
 import Review from '../Review/Review';
+import AdminRoute from '../AdminRoute/AdminRoute';
+import AddProduct from '../Admin/AddProduct/AddProduct';
+import ManageProducts from '../Admin/ManageProducts/ManageProducts';
+
+
 
 const drawerWidth = 240;
 
@@ -40,17 +45,28 @@ function Dashboard(props) {
     setMobileOpen(!mobileOpen);
   };
   let { path, url } = useRouteMatch();
-  const {logOut}=useAuth()
+  const { logOut, admin } = useAuth()
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
-      
-      <Link to="/home" >  <Button> Home </Button></Link> <br/>
-      <Link to={`${url}/payNow`} >  <Button> Pay Now </Button></Link> <br/>
-      <Link to={`${url}/myOrders`} >  <Button> My Orders</Button></Link> <br/>
-      <Link to={`${url}/review`} >  <Button>Review </Button></Link> <br/>
-      <Link to={`${url}/admin`} >  <Button>Make Admin</Button></Link> <br/>
+
+      <Link to="/home" >  <Button> Home </Button></Link> <br />
+      {
+        !admin ? <Box>
+          <Link to={`${url}/payNow`} >  <Button> Pay Now </Button></Link> <br />
+          <Link to={`${url}/myOrders`} >  <Button> My Orders</Button></Link> <br />
+          <Link to={`${url}/review`} >  <Button>Review </Button></Link> <br /></Box> :
+          <Box>
+            <Link to={`${url}/admin`} >  <Button>Manage All Orders</Button></Link> <br />
+            <Link to={`${url}/addProduct`} >  <Button>Add a Product</Button></Link> <br />
+            <Link to={`${url}/manageProducts`} >  <Button>Manage Products</Button></Link> <br />
+            <Link to={`${url}/admin`} >  <Button>Make Admin</Button></Link> <br />
+          </Box>
+
+      }
+
+
       <Divider />
       <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
@@ -62,7 +78,7 @@ function Dashboard(props) {
           </ListItem>
         ))}
       </List>
-      
+
       <Button onClick={logOut} >Log Out</Button>
     </div>
   );
@@ -136,24 +152,30 @@ function Dashboard(props) {
 
         </Typography>
         <Switch>
-        <Route exact path={path}>
-        
-        </Route>
-        <Route path={`${path}/myOrders`}>
-          <MyOrders />
-        </Route>
-        <Route path={`${path}/payNow`}>
-          <PayNow />
-        </Route>
-        <Route path={`${path}/review`}>
-          <Review />
-        </Route>
-        <Route path={`${path}/admin`}>
-          <MakeAdmin />
-        </Route>
-      </Switch>
+          <Route exact path={path}>
+
+          </Route>
+          <AdminRoute path={`${path}/myOrders`}>
+            <MyOrders />
+          </AdminRoute>
+          <AdminRoute path={`${path}/payNow`}>
+            <PayNow />
+          </AdminRoute>
+          <AdminRoute path={`${path}/review`}>
+            <Review />
+          </AdminRoute>
+          <AdminRoute path={`${path}/addProduct`}>
+            <AddProduct />
+          </AdminRoute>
+          <AdminRoute path={`${path}/manageProducts`}>
+            <ManageProducts />
+          </AdminRoute>
+          <AdminRoute path={`${path}/admin`}>
+            <MakeAdmin />
+          </AdminRoute>
+        </Switch>
       </Box>
-     
+
     </Box>
   );
 }

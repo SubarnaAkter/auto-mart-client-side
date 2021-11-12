@@ -3,22 +3,11 @@ import { Container, Row } from 'react-bootstrap';
 import Footer from '../Home/Footer/Footer';
 import Navigation from '../Home/Shared/Navigation/Navigation';
 import AllProduct from './AllProduct/AllProduct';
-
+import useProducts from '../../Hooks/useProducts'
 const Explore = () => {
-    const [allproducts,setAllProducts]=useState([]);
+
     
-    
-   useEffect(()=>{
-      
-       fetch('http://localhost:5000/products')
-       .then(res=>res.json())
-       .then(data=>{
-        setAllProducts(data)
-         
-       })
-     
-   
-   },[])
+    const {products}=useProducts();
     return (
        <div>
              <Navigation></Navigation>
@@ -28,7 +17,7 @@ const Explore = () => {
 
             <Row xs={1} md={3} className="g-2 mb-5">
             {
-                allproducts.map(product => <AllProduct
+                products.map(product => <AllProduct
                     key={product._id}
                     product={product}
                 ></AllProduct>)

@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Container, Row } from 'react-bootstrap';
-import useProducts from '../../../Hooks/useProducts';
 import Product from '../Product/Product';
 
 const Products = () => {
-    const {products} = useProducts()
+    const [products,setProducts]=useState([]);
+    const size=6;
+    useEffect(()=>{
+      
+        fetch(`http://localhost:5000/products?size=${size}`)
+        .then(res=>res.json())
+        .then(data=>{
+            setProducts(data)
+          
+        })
+      
+    
+    },[])
     return (
         <Container>
             <h1 className="text-center my-5"> Brand New Cars</h1>
