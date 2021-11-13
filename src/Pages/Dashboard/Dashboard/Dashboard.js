@@ -46,7 +46,7 @@ function Dashboard(props) {
     setMobileOpen(!mobileOpen);
   };
   let { path, url } = useRouteMatch();
-  const { logOut, admin } = useAuth()
+  const { logOut, admin,user } = useAuth()
   const drawer = (
     <div>
       <Toolbar />
@@ -150,7 +150,7 @@ function Dashboard(props) {
       >
         <Toolbar />
         <Typography paragraph>
-
+              WelCome {user.displayName}
         </Typography>
         <Switch>
           <Route exact path={path}>

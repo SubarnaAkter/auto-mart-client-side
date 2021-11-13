@@ -42,7 +42,7 @@ const Review = () => {
             <form className="w-50 mx-auto m-5" onSubmit={handleSubmit(onSubmit)}>
 
 
-                <input defaultValue={user.displayName} className="w-100 p-2 m-1" type="text" {...register("name")} required /> <br />
+                <input defaultValue={user.displayName} className="w-100 p-2 m-1" type="text" {...register("name")} readOnly /> <br />
 
                 <textarea placeholder="Write Feedback" className="w-100 p-5 m-1" type="text" {...register("feedback")} required /> <br />
 
