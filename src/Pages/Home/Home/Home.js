@@ -8,7 +8,7 @@ import Navigation from '../Shared/Navigation/Navigation';
 
 const Home = () => {
     return (
-        <div>
+        <div className="overflow-hidden">
             <Navigation></Navigation>
             <Banner></Banner>
             <Products></Products>

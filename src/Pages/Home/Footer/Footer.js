@@ -36,10 +36,12 @@ const Footer = () => {
             
         </Row>
       
-            <button className="fs-4"><i className="fab fa-facebook"></i></button>
+          <div className="text-center">
+          <button className="fs-4"><i className="fab fa-facebook"></i></button>
             <button className="fs-4 mx-1"><i className="fab fa-instagram"></i></button>
             <button className="fs-4"> <i className="fab fa-twitter-square"></i></button>
             <button className="fs-4 ms-1">  <i className="fab fa-google-plus-g"></i></button>
+          </div>
         <p className="text-center mt-5 py-3 fs-5 mb-0 border-top">Copyright &copy; Auto Mart ,2021</p>
     </div>
     );
