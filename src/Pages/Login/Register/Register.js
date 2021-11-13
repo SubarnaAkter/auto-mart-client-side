@@ -38,7 +38,7 @@ const Register = () => {
         <div className="row pb-5  reg-page  mx-auto ">
              <Navbar expand={false}  variant="dark">
   <Container fluid >
-    <Navbar.Brand href="#home">Auto Mart</Navbar.Brand>
+    <Navbar.Brand href="/home">Auto Mart</Navbar.Brand>
     <Navbar.Toggle aria-controls="offcanvasNavbar" />
     <Navbar.Offcanvas
       id="offcanvasNavbar"
@@ -60,11 +60,12 @@ const Register = () => {
   </Container>
 </Navbar>
           <div  className="col-12 container col-md-6  p-5">
-                  <div className="register  text-center bg-info w-75 mx-auto p-3 ">
+                  <div className=" register text-center bg-info w-75 mx-auto p-3 ">
                       <h1>Register</h1>
                       <h3>Auto mart</h3>
                   </div>
-                    <form onSubmit={handleSubmit(onSubmit)} className="login w-100 bg-dark p-5 pt-5 mx-auto border " >
+                 <div className="">
+                 <form onSubmit={handleSubmit(onSubmit)} className="login w-100 bg-dark p-5 pt-5 mx-auto border " >
                         <input type="text" className="w-100 my-2 p-2 mt-5" placeholder="Enter your Name" {...register("userName")} /> <br />
 
                         <input type="email" className="w-100 my-2 p-2" placeholder="Enter your Email" {...register("email", { required: true })} /> <br />
@@ -75,9 +76,10 @@ const Register = () => {
                         {/* errors will return when field validation fails  */}
                         {errors.email && <span className="text-danger pb-2 mb-3">This field is required</span>} <br />
                         <p className="text-danger">{authError}</p>
-                        <input className="button-regular rounded w-100 fw-bold mb-3" type="submit" /><br />
+                        <input className="btn btn-info rounded w-100 fw-bold mb-3" type="submit" /><br />
                     </form>
                     <p className="text-white text-center">Already Registered?  <Link to="/login">Please Login</Link></p>
+                 </div>
           </div>
         </div>
     );

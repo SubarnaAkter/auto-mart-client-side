@@ -6,7 +6,7 @@ import useAuth from '../../../../Hooks/useAuth';
 const Navigation = () => {
   const {user,logOut}=useAuth()
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top" >
       <Container>
         <Navbar.Brand href="#home">Auto Mart</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -31,7 +31,7 @@ const Navigation = () => {
              </span>
             {
              user.email ?
-             <button onClick={logOut}>  Log out</button>
+             <button onClick={logOut} className="btn-regular">  Log out</button>
                : <Nav.Link as={Link} to="/Login">
                 Login
               </Nav.Link>

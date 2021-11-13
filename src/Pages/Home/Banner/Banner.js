@@ -6,7 +6,7 @@ import redCar from '../../../images/redCar.png';
 const Banner = () => {
     return (
         <div>
-            <Carousel style={{ backgroundColor: "rgba(6, 13, 80)",height:"500px" }} className="py-5 banner-style">
+            <Carousel style={{ backgroundColor: "rgb(8, 25, 82)",height:"500px" }} className="py-5 banner-style">
                 <Carousel.Item interval={1000}>
                     <Row xs={1} md={2}>
                         <Col className="d-flex justify-content-center align-items-center ">
@@ -69,29 +69,29 @@ const Banner = () => {
                 <div >
                     <div className="card-group container service-style">
 
-                        <div className="card p-5 river-rides">
+                        <div className="card p-5 buy">
 
-                            <i className="fas fa-map-marker-alt icon "></i>
-
+                            <i className="fas fa-car-alt icon "></i>
+                           
                             <div className="card-body">
                                 <h3 className="card-title">Buy and Sale Vehiclese</h3>
                                 <p className="card-text">We buy and sale barand new car and also used car of any brand</p>
                             </div>
 
 
-
+                            
                         </div>
-                        <div className="card water-slide p-5 ">
-                            <i className="fas fa-phone-alt icon"></i>
+                        <div className="card rental p-5 ">
+                            <i className="fas fa-bus-alt icon"></i>
                             <div className="card-body">
                                 <h3 className="card-title">Vehicles Rental Service</h3>
                                 <p className="card-text">We buy and sale barand new car and also used car of any brand</p>
                                
                             </div>
-
+                          
                         </div>
-                        <div className="card pools p-5">
-                            <i className="fas fa-envelope-open-text icon"></i>
+                        <div className="card service p-5">
+                            <i className="fas fa-truck icon"></i>
                             <div className="card-body">
                                 <h3 className="card-title">Vehicles Servicing</h3>
                                 <p className="card-text">We buy and sale barand new car and also used car of any brand</p>

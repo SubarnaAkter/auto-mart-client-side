@@ -4,15 +4,15 @@ import Footer from '../Home/Footer/Footer';
 import Navigation from '../Home/Shared/Navigation/Navigation';
 import AllProduct from './AllProduct/AllProduct';
 import useProducts from '../../Hooks/useProducts'
-import MyOrders from '../Dashboard/MyOrders/MyOrders';
+
 const Explore = () => {
 
     
     const {products}=useProducts();
     return (
-       <div>
+       <div style={{backgroundColor:'rgb(226, 229, 245)'}}>
              <Navigation></Navigation>
-             <MyOrders></MyOrders>
+            
             <Container>
           
             <h1 className="text-center my-5">All Cars</h1>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, Col,Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import Fade from 'react-reveal/Fade';
 const AllProduct = ({ product }) => {
     const {_id, name, speed, details, price, img } = product;
     return (
         <Col>
-            <Card>
+            <Fade left>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
@@ -25,9 +25,9 @@ const AllProduct = ({ product }) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer className="m-0 p-0">
-                  <Link to={`/booking/${_id}`}  ><Button className="w-100 ">Buy Now</Button></Link>
+                  <Link to={`/booking/${_id}`}  ><Button className="w-100 btn-regular">Buy Now</Button></Link>
                 </Card.Footer>
-            </Card>
+            </Fade>
             </Col>
             );
 };
