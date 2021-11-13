@@ -31,7 +31,7 @@ const ManageProduct = ({product,handleDeleteProduct}) => {
                 <Card.Footer className="m-0 p-0">
                 <Button onClick={()=>{
                       handleDeleteProduct(_id)
-                  }} variant="danger" className="mx-1">Delete Product</Button>
+                  }} variant="danger" className="mx-1 w-100">Delete Product</Button>
                 </Card.Footer>
             </Card>
             </Col>

@@ -8,7 +8,7 @@ const AdminRoute = ({ children, ...rest }) => {
 
     if(loading){
         return <div>
-            <img src={spinner} alt="spinner" />
+            <img  className="mx-auto" src={spinner} alt="spinner" />
         </div>
     }
     return (
@@ -22,7 +22,7 @@ const AdminRoute = ({ children, ...rest }) => {
                  (
                     <Redirect
                         to={{
-                            pathname: "/",
+                            pathname: "/Home",
                             state: { from: location }
                         }}
                     />

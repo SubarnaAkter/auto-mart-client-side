@@ -4,6 +4,7 @@ import Footer from '../Home/Footer/Footer';
 import Navigation from '../Home/Shared/Navigation/Navigation';
 import AllProduct from './AllProduct/AllProduct';
 import useProducts from '../../Hooks/useProducts'
+import MyOrders from '../Dashboard/MyOrders/MyOrders';
 const Explore = () => {
 
     
@@ -11,6 +12,7 @@ const Explore = () => {
     return (
        <div>
              <Navigation></Navigation>
+             <MyOrders></MyOrders>
             <Container>
           
             <h1 className="text-center my-5">All Cars</h1>

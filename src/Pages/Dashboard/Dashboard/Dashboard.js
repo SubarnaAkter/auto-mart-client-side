@@ -32,6 +32,7 @@ import Review from '../Review/Review';
 import AdminRoute from '../AdminRoute/AdminRoute';
 import AddProduct from '../Admin/AddProduct/AddProduct';
 import ManageProducts from '../Admin/ManageProducts/ManageProducts';
+import ManageAllOrders from '../Admin/ManageAllOrders/ManageAllOrders';
 
 
 
@@ -58,7 +59,7 @@ function Dashboard(props) {
           <Link to={`${url}/myOrders`} >  <Button> My Orders</Button></Link> <br />
           <Link to={`${url}/review`} >  <Button>Review </Button></Link> <br /></Box> :
           <Box>
-            <Link to={`${url}/admin`} >  <Button>Manage All Orders</Button></Link> <br />
+            <Link to={`${url}/manageAllOrders`} >  <Button>Manage All Orders</Button></Link> <br />
             <Link to={`${url}/addProduct`} >  <Button>Add a Product</Button></Link> <br />
             <Link to={`${url}/manageProducts`} >  <Button>Manage Products</Button></Link> <br />
             <Link to={`${url}/admin`} >  <Button>Make Admin</Button></Link> <br />
@@ -153,16 +154,19 @@ function Dashboard(props) {
         </Typography>
         <Switch>
           <Route exact path={path}>
-
+          <MyOrders />
           </Route>
-          <AdminRoute path={`${path}/myOrders`}>
+          <Route path={`${path}/myOrders`}>
             <MyOrders />
-          </AdminRoute>
-          <AdminRoute path={`${path}/payNow`}>
+          </Route>
+          <Route path={`${path}/payNow`}>
             <PayNow />
-          </AdminRoute>
-          <AdminRoute path={`${path}/review`}>
+          </Route>
+          <Route path={`${path}/review`}>
             <Review />
+          </Route>
+          <AdminRoute path={`${path}/manageAllOrders`}>
+            <ManageAllOrders />
           </AdminRoute>
           <AdminRoute path={`${path}/addProduct`}>
             <AddProduct />

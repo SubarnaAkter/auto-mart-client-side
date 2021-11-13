@@ -8,7 +8,7 @@ const PrivateRoute = ({ children, ...rest }) => {
 
     if(loading){
         return <div>
-            <img src={spinner} alt="spinner" />
+            <img className="mx-auto" src={spinner} alt="spinner" />
         </div>
     }
     return (

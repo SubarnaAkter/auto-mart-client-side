@@ -20,7 +20,7 @@ const Booking = () => {
   }
     , [])
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit,reset } = useForm();
   const onSubmit = data => {
     fetch('http://localhost:5000/orders', {
       method: 'POST',
@@ -40,6 +40,7 @@ const Booking = () => {
             showConfirmButton: false,
             timer: 1500
           })
+          reset()
         }
       })
   }
@@ -75,7 +76,7 @@ const Booking = () => {
                   <input placeholder="Enter Contact No." className="w-100 p-2 m-1" type="number" {...register("contact")} /> <br />
                   <input defaultValue="pending" className="w-100 p-2 m-1" type="text" {...register("status")} hidden /> <br />
                   <input className="w-100 p-2 m-1 bg-success text-white fw-bold" type="submit" value="Place Order" />
-                  <Link to="/myBookings"><button className="btn-regular">See my Orders</button></Link>
+                  <Link to="/dashboard/myOrders"><button className="btn-regular">See my Orders</button></Link>
                 </form>
               </div>
             </div>

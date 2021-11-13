@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Container, Navbar, Offcanvas, Nav } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../../Hooks/useAuth';
@@ -11,7 +11,7 @@ const Register = () => {
 
  
     const history = useHistory();
-
+    const location=useLocation();
 
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -27,7 +27,7 @@ const Register = () => {
         }
         else{
 
-        registerUser(email, password, userName,  history);
+        registerUser(email, password, userName,  history,location);
         }
 
     }

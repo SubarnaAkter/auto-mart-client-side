@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card,Button } from 'react-bootstrap';
+import { Card,Button, Row, Col } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import useAuth from '../../../Hooks/useAuth';
 
@@ -11,11 +11,11 @@ const MyOrders = () => {
         fetch(`http://localhost:5000/orders`)
         .then(res=>res.json())
         .then(data=>{
-          const myOrders= data.filter(order=>order.email===user.email)
-          setMyOrders(myOrders)
+          const myOrder= data.filter(order=>order.email===user.email)
+          setMyOrders(myOrder)
         });
        },[]);
-
+      console.log(myOrders)
        const  handleCancelBooking=(id)=>{
 
         Swal.fire({
@@ -53,10 +53,10 @@ const MyOrders = () => {
           
     return (
         <div>
-            <div>
+            <Row xs={1} md={2} sm={1} className="g-2 mb-5">
           {
-              myOrders.map(myOrder=> <Card key={myOrder._id} className=" m-5 w-50 mx-auto"> 
-               
+              myOrders.map(myOrder=> <Col key={myOrder._id} className=" m-5 w-50 mx-auto"> 
+               <Card>
               <Card.Body className="ps-5">
                   <Card.Title>{myOrder.name}</Card.Title>
                   <Card.Text>
@@ -77,9 +77,10 @@ const MyOrders = () => {
                   }} variant="danger" className="mx-1">Cancel Order</Button>
                   
               </Card.Body>
-          </Card>)
+             </Card>
+          </Col>)
           }
-        </div>
+        </Row>
         </div>
     );
 };
