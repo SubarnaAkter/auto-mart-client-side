@@ -30,8 +30,8 @@ const Banner = () => {
                 <Row  xs={1} md={2}>
                         <Col className="d-flex justify-content-center align-items-center">
                             <div className="text-white">
-                                <h3>First slide label</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3>Power and Beauty</h3>
+                                <p>Free Library’s $1M auto archives are moving to Philly’s <br /> world-famous car museum and to a Hershey attraction.</p>
                             </div>
                         </Col>
                         <Col>
@@ -48,8 +48,8 @@ const Banner = () => {
                 <Row  xs={1} md={2}>
                         <Col className="d-flex justify-content-center align-items-center">
                             <div className="text-white">
-                                <h3>First slide label</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3>Power and Beauty</h3>
+                                <p>Free Library’s $1M auto archives are moving to Philly’s <br /> world-famous car museum and to a Hershey attraction.</p>
                             </div>
                         </Col>
                         <Col>

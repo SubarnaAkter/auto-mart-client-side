@@ -8,7 +8,7 @@ const MyOrders = () => {
     const {user}=useAuth()
     const [myOrders,setMyOrders]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://pure-springs-40061.herokuapp.com/orders`)
         .then(res=>res.json())
         .then(data=>{
           const myOrder= data.filter(order=>order.email===user.email)
@@ -28,7 +28,7 @@ const MyOrders = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/orders/${id}`,{
+                fetch(`https://pure-springs-40061.herokuapp.com/orders/${id}`,{
                     method:"DELETE"
                 })
                 .then(res=>res.json())

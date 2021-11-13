@@ -6,7 +6,7 @@ const AddProduct = () => {
 
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
-       fetch('http://localhost:5000/products',{
+       fetch('https://pure-springs-40061.herokuapp.com/products',{
         method:'POST',
         headers: {
           'content-type':'application/json'

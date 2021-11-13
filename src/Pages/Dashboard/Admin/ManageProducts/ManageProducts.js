@@ -10,7 +10,7 @@ const ManageProducts = () => {
    
    useEffect(()=>{
       
-       fetch('http://localhost:5000/products')
+       fetch('https://pure-springs-40061.herokuapp.com/products')
        .then(res=>res.json())
        .then(data=>{
         setProducts(data)
@@ -31,7 +31,7 @@ const ManageProducts = () => {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/products/${id}`,{
+            fetch(`https://pure-springs-40061.herokuapp.com/products/${id}`,{
                 method:"DELETE"
             })
             .then(res=>res.json())

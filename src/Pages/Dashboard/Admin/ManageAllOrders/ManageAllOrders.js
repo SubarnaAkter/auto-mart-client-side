@@ -1,22 +1,31 @@
 
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
+    const [status,setStatus]= useState(true);
     
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://pure-springs-40061.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setAllOrders(data)
             );
-    }, []);
+    }, [status]);
   
     const handleCancel = (id) => {
-        const cancelConfirmed = window.confirm("Are you Sure? You want to Cancel this Booking!");
-
-        if (cancelConfirmed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed)  {
+            fetch(`https://pure-springs-40061.herokuapp.com/orders/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -24,21 +33,27 @@ const ManageAllOrders = () => {
 
 
                     if (data.deletedCount > 0) {
-                        alert("Booking Canceled?");
+                        Swal.fire(
+                            'Deleted!',
+                            'Order is Removed from Order List.',
+                            'success'
+                         )
                         const remaining = allOrders.filter(order => order._id !== id)
                         setAllOrders(remaining)
                     }
 
                 })
         }
+    })
     }
     ///update status
    
 
     const handleConfirm = (id) => {
        
+        setStatus(false)
         
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://pure-springs-40061.herokuapp.com/orders/${id}`, {
             method: 'put',
             headers: {
                 'content-type': 'application/json'
@@ -50,9 +65,19 @@ const ManageAllOrders = () => {
 
               
                 if (data.modifiedCount > 0) {
-                    alert("Order Confirmed");
-                   
+                    Swal.fire({
+                        title: 'Order Confirmed',
+                        icon:'success',
+                        showClass: {
+                          popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                          popup: 'animate__animated animate__fadeOutUp'
+                        }
+                      })
+                  
                 }
+                setStatus(true) 
             })
            
         

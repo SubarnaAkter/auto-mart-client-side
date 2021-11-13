@@ -14,7 +14,7 @@ const Booking = () => {
   const { user } = useAuth()
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${productId}`)
+    fetch(`https://pure-springs-40061.herokuapp.com/products/${productId}`)
       .then(res => res.json())
       .then(data => setBooking(data))
   }
@@ -22,7 +22,7 @@ const Booking = () => {
 
   const { register, handleSubmit,reset } = useForm();
   const onSubmit = data => {
-    fetch('http://localhost:5000/orders', {
+    fetch('https://pure-springs-40061.herokuapp.com/orders', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

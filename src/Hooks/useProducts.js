@@ -6,7 +6,7 @@ const useProducts = () => {
    
    useEffect(()=>{
        setLoading(true)
-       fetch('http://localhost:5000/products')
+       fetch('https://pure-springs-40061.herokuapp.com/products')
        .then(res=>res.json())
        .then(data=>{
         setProducts(data)
