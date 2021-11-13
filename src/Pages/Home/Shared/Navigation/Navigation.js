@@ -14,8 +14,7 @@ const Navigation = () => {
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/home">Home</Nav.Link>
             <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
-            <Nav.Link href="#pricing">About</Nav.Link>
-            <Nav.Link href="#deets">Contact</Nav.Link>
+          
             <span className="text-white">
                   {
                     user.email &&   <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>

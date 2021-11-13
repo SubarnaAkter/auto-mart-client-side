@@ -1,6 +1,8 @@
 import React from 'react';
 import { Carousel, Row, Col } from 'react-bootstrap';
 import  './Banner.css';
+import yellowCar from '../../../images/yellowCar.png';
+import redCar from '../../../images/redCar.png';
 const Banner = () => {
     return (
         <div>
@@ -17,7 +19,7 @@ const Banner = () => {
                         <Col>
                             <img
                                 className="d-block w-100"
-                                src="https://i.pinimg.com/originals/21/6f/1c/216f1c3378c57470b836b116b5bdfb9d.png"
+                                src={redCar}
                                 alt="First slide"
                             />
                            
@@ -55,7 +57,7 @@ const Banner = () => {
                         <Col>
                             <img
                                 className="d-block w-100"
-                                src="https://i.pinimg.com/originals/21/6f/1c/216f1c3378c57470b836b116b5bdfb9d.png"
+                                src={yellowCar}
                                 alt="First slide"
                             />
                         </Col>
