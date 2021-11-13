@@ -35,8 +35,9 @@ const MakeAdmin = () => {
 
     
     return (
-        <div>
-           <form onSubmit={handleSubmit(onSubmit)} className="mx-auto">
+        <div className="text-center">
+          <h1>Make an Admin</h1>
+           <form onSubmit={handleSubmit(onSubmit)} className="mx-auto mt-5">
              <input type="email" className="mx-auto w-75 my-2 p-2" placeholder="Enter your Email" {...register("email", { required: true })} /> <br />
              <input  className=  " mx-auto button-regular rounded w-75 fw-bold mb-3" type="submit" value="Make admin" /><br />
              </form>

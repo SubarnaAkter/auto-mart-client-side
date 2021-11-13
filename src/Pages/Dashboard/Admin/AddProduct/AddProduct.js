@@ -36,7 +36,7 @@ const AddProduct = () => {
 
     return (
         <div>
-            <h1 className="pt-5">Add a New Car</h1>
+            <h1 className="pt-5 text-center">Add a New Car</h1>
             <div>
                 <form className="w-50 mx-auto m-5" onSubmit={handleSubmit(onSubmit)}>
 

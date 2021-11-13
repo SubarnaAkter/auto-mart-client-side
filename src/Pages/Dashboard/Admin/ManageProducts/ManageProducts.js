@@ -54,7 +54,7 @@ const ManageProducts = () => {
 }
     return (
        <div>
-           <h1 className="text-success">Manage All Products</h1>
+           <h1 className="text-success text-center">Manage All Products</h1>
              <Container>
           
             <h1 className="text-center my-5">All Cars</h1>

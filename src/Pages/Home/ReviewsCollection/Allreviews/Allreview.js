@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import SingleReview from '../SignleReview/SingleReview';
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"; 

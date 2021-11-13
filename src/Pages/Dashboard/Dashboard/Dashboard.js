@@ -21,7 +21,7 @@ import {
   Switch,
   Route,
   Link,
-  useParams,
+ 
   useRouteMatch
 } from "react-router-dom";
 import { Button } from '@mui/material'
@@ -33,6 +33,7 @@ import AdminRoute from '../AdminRoute/AdminRoute';
 import AddProduct from '../Admin/AddProduct/AddProduct';
 import ManageProducts from '../Admin/ManageProducts/ManageProducts';
 import ManageAllOrders from '../Admin/ManageAllOrders/ManageAllOrders';
+import DashboardHome from '../DashboardHome/DashboardHome';
 
 
 
@@ -46,23 +47,23 @@ function Dashboard(props) {
     setMobileOpen(!mobileOpen);
   };
   let { path, url } = useRouteMatch();
-  const { logOut, admin,user } = useAuth()
+  const { logOut, admin} = useAuth()
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
 
-      <Link to="/home" >  <Button> Home </Button></Link> <br />
+      <Link to="/home" style={{textDecoration:'none',marginLeft:'60px',color:'black'}} >  <Button> Home </Button></Link> <br />
       {
         !admin ? <Box>
-          <Link to={`${url}/payNow`} >  <Button> Pay Now </Button></Link> <br />
-          <Link to={`${url}/myOrders`} >  <Button> My Orders</Button></Link> <br />
-          <Link to={`${url}/review`} >  <Button>Review </Button></Link> <br /></Box> :
+          <Link to={`${url}/payNow`}  style={{textDecoration:'none',marginLeft:'60px',color:'black'}}>  <Button> Pay Now </Button></Link> <br />
+          <Link to={`${url}/myOrders`}  style={{textDecoration:'none',marginLeft:'60px',color:'black'}}>  <Button> My Orders</Button></Link> <br />
+          <Link to={`${url}/review`}  style={{textDecoration:'none',marginLeft:'60px',color:'black'}}>  <Button>Review </Button></Link> <br /></Box> :
           <Box>
-            <Link to={`${url}/manageAllOrders`} >  <Button>Manage All Orders</Button></Link> <br />
-            <Link to={`${url}/addProduct`} >  <Button>Add a Product</Button></Link> <br />
-            <Link to={`${url}/manageProducts`} >  <Button>Manage Products</Button></Link> <br />
-            <Link to={`${url}/admin`} >  <Button>Make Admin</Button></Link> <br />
+            <Link to={`${url}/manageAllOrders`}  style={{textDecoration:'none',marginLeft:'60px',color:'black'}}>  <Button>Manage All Orders</Button></Link> <br />
+            <Link to={`${url}/addProduct`}  style={{textDecoration:'none',marginLeft:'60px',color:'black'}}>  <Button>Add a Product</Button></Link> <br />
+            <Link to={`${url}/manageProducts`}  style={{textDecoration:'none',marginLeft:'60px',color:'black'}}>  <Button>Manage Products</Button></Link> <br />
+            <Link to={`${url}/admin`}  style={{textDecoration:'none',marginLeft:'60px',color:'black'}}>  <Button>Make Admin</Button></Link> <br />
           </Box>
 
       }
@@ -80,7 +81,7 @@ function Dashboard(props) {
         ))}
       </List>
 
-      <Button onClick={logOut} >Log Out</Button>
+      <Button onClick={logOut}  style={{marginLeft:'60px',color:'black'}}>Log Out</Button>
     </div>
   );
 
@@ -149,12 +150,10 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography paragraph>
-              WelCome {user.displayName}
-        </Typography>
+       
         <Switch>
           <Route exact path={path}>
-          <MyOrders />
+          <DashboardHome></DashboardHome>
           </Route>
           <Route path={`${path}/myOrders`}>
             <MyOrders />

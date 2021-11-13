@@ -87,7 +87,7 @@ const ManageAllOrders = () => {
 
 
             <div className="container my-5">
-                <h1>All Orders</h1>
+                <h1 className="text-center">All Orders</h1>
                 <Table responsive striped bordered hover className="m-5 ">
                     <thead>
                         <tr>
