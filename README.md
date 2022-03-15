@@ -1,6 +1,6 @@
 # Getting Started with Auto Mart
 
-This project was bootstrapped with [Auto Mart](https://auto-mart-d4a30.web.app/).
+Live site: [Auto Mart](https://auto-mart-d4a30.web.app/).
 
 ## Admin Access
 Email: admin@admin.com
