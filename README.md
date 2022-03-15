@@ -2,8 +2,9 @@
 
 This project was bootstrapped with [Auto Mart](https://auto-mart-d4a30.web.app/).
 
-## Available Scripts
-
+## Admin Access
+Email: admin@admin.com
+Password: 123456
 
 ### `Used Technology`
 
